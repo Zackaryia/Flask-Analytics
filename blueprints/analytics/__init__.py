@@ -1,1 +1,1 @@
-from blueprints.analytics.view import analytics, include, include_js_analytics, exclude, exclude_js_analytics
+from blueprints.analytics.view import analytics, include, exclude

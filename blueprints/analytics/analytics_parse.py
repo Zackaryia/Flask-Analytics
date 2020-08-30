@@ -1,9 +1,12 @@
 from datetime import datetime, timezone, timedelta
-from json import dumps
+from json import dumps, load
 
 from pymongo import MongoClient
 
-client = MongoClient("mongodb+srv://ConnectionCred:D5ONW4P5kHLtjErK@cluster0.52i7u.mongodb.net/analytics?retryWrites=true&w=majority")
+
+with open('keys.json', 'r') as keys_file:
+	keys = load(keys_file)
+client = MongoClient(keys["MONGO_URI_ANALYTICS"])
 
 entrys = client.analytics.entrys
 processed = client.analytics.processed 
