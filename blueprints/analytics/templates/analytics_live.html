@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{{url_for('analytics.static', filename='js/jquery-3.5.1.min.js')}}"></script>
+
+</head>
+<body>
+    <h1>Current Sessions</h1>
+    <p>Active sessions: <span id="sessions"></span></p>
+
+    <script>
+    function update_sessions() {
+        $.get('{{url_for("analytics.dashboard_live_data")}}', function(data, status){
+            $("#sessions").text(data['value'])
+            let paths = data['paths'] 
+            for (let index = 0; index < Object.keys(paths).length; index++) {
+                const y = paths[Object.keys(paths)[index]];
+                console.log(Object.keys(paths))
+                console.log(y)
+            }   
+        })
+    }
+    $( document ).ready(function() {
+        update_sessions()
+        window.setInterval(update_sessions, 5000);
+    });
+    
+    </script>
+    <div class="container" id="paths">
+        <table style="color: rgb(211, 211, 211);" class="table-dark table-bordered table">
+            <thead>
+                <tr>
+                    <th>Country Name</th>
+                    <th>Country Code</th>
+                    <th>Page Views</th>
+                    <th>Sessions</th>
+                    <th>Visitors</th>
+                    <!--<th>Page Views</th>-->
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

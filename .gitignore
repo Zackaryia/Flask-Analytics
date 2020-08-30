@@ -1,0 +1,8 @@
+keys.json
+venv
+temp/*
+temp/
+test.py
+config.py
+venv/
+__pycache__/

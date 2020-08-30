@@ -1,0 +1,14 @@
+{
+    "_comment": "Read through the file and replace any values the file says to do then rename the whole file to 'keys.json'",
+
+    "secret": "Change Me NOWWW!! 9mI4#i^A0E21X",
+    "ipgeolocationio": "optional_but_recomended_to_set",
+
+    "mongo_uri": "set_to_your_uri",
+
+    "_comment": "Keep order_funcs the same unless you have a commercial bizness or you know what you are doing.",
+    "order_funcs": [
+        "ipwhois",
+        "ipgeolocation"
+    ]
+}
