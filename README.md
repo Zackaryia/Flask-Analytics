@@ -4,8 +4,8 @@ A Flask analytics library that stores analytics data on your servers and does no
 The point of this library is to add a way for people to have an anlaytics tool that respects their uses data and does not hand it over to 3rd partys and in the future it will add ways to not track the user at all (no session cookies no visitor cookies etc)
 
 
-### TODO
-What is needed to be done:
+## TODO
+### What is needed to be done:
 
 Add comments
 
@@ -21,6 +21,6 @@ Make a Javascript tracker as well (a tracker in javascript that tracks how long 
 
 Store anonamized data and not raw data with identifyers
 
-Far down the road:
+### Far down the road:
 
 Support SQL as well as MongoDB and other things like DynamoDB and other databases
